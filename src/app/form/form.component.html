@@ -1,0 +1,30 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+    <div class="form-group nome" [class.has-error]="nome.invalid && nome.touched">
+        <label for="name">Nome completo</label>
+        <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome" [ngModel]="usuarios.nome" required #nome="ngModel">
+    </div>
+
+    <div class="form-group email" [class.has-error]="email.invalid && email.touched">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="julianaOliveira@gmail.com" name="email" ngModel required email #email="ngModel">
+    </div>
+
+    <div class="form-group cpf" [class.has-error]="cpf.invalid && cpf.touched">
+        <label for="exampleInputEmail1">CPF</label>
+        <input class="form-control" id="exampleInputEmail1" placeholder="" name="cpf" maxlength="11" ngModel required #cpf="ngModel">
+    </div>
+
+    <div class="form-group data" [class.has-error]="data.invalid && data.touched">
+        <label for="exampleInputEmail1">Data da Consulta</label>
+        <input type="date" class="form-control" id="" placeholder="" name="data" ngModel required #data="ngModel">
+    </div>
+
+    <div class="form-group desc" [class.has-error]="desc.invalid && desc.touched">
+        <label for="exampleInputEmail1">Descrição do paciente</label>
+        <textarea class="form-control" name="desc" id="" cols="30" rows="10" ngModel required #desc="ngModel"></textarea>
+    </div>
+
+    <button type="submit" class="btn ">Enviar</button>
+
+</form>
