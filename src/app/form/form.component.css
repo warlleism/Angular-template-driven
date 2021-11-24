@@ -1,16 +1,21 @@
-form {
-    margin: 0 auto;
-    width: 600px;
-    margin-top: 20px;
-    margin-top: 100px;
-    background-color: blueviolet;
-    padding: 20px;
-    border-radius: 5px;
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: row;
+form {
+    margin: 0 auto;
+    width: 660px;
+    background-color: #FF6F91;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 100px;
+}
+
+form input {
+    padding: 20px;
 }
 
 .form-group label {
@@ -39,7 +44,7 @@ form {
 }
 
 button {
-    margin-left: 190px;
+    margin-left: 220px;
     width: 200px;
     font-weight: 900;
     background-color: cornflowerblue;
@@ -50,4 +55,63 @@ button {
 button:active {
     background-color: rgba(165, 15, 15, 0.508);
     color: white;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-right: 14px;
+    max-width: 430px;
+}
+
+section span {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.check {
+    max-width: 590px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.check>span {
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    width: 133px;
+    color: white;
+}
+
+.d1 {
+    max-width: 478px;
+    height: 40px;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.d1 span {
+    margin: 0px 60px 0px 0px;
+}
+
+.d2 {
+    max-width: 473px;
+    height: 40px;
+    font-size: 1.3rem;
+}
+
+.d2 span {
+    margin: 0px 46px 0px 0px;
+}
+
+.d3 {
+    width: 503px;
+    height: 40px;
+    font-size: 1.3rem;
+}
+
+.d3 span {
+    margin: 0px 154px 0px 0px;
 }
