@@ -31,4 +31,14 @@ export class FormComponent implements OnInit {
   showDados() {
     console.log(this.usuarios);
   }
+
+  verificaValidTouched(campo: any) {
+    return campo.invalid && campo.touched;
+  }
+  aplicarCssError(campo: any) {
+    return {
+      'has-error': this.verificaValidTouched(campo),
+      'has-feedback': this.verificaValidTouched(campo),
+    };
+  }
 }
