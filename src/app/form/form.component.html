@@ -2,26 +2,40 @@
 
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
 
-        <div class="form-group nome has-success has-feedback" [ngClass]=" aplicarCssError(nome)">
+        <div class="form-group nome has-success has-feedback" [class.has-error]="nome.invalid && nome.touched" [class.has-success]="nome.valid">
             <label for="name">Nome completo</label>
             <input type="text" class="form-control" id="nome" placeholder="Nome" name="nome" [(ngModel)]="usuarios.nome" required #nome="ngModel">
-
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" *ngIf="nome.invalid"></span>
+            <span id="inputError2Status" class="sr-only">(error)</span>
+            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" *ngIf="nome.valid"></span>
+            <span id="inputSuccess2Status" class="sr-only">(success)</span>
         </div>
 
-        <div class="form-group email has-success   has-feedback" [ngClass]=" aplicarCssError(email)">
+        <div class="form-group email has-success   has-feedback" [class.has-error]="email.invalid && email.touched" [class.has-success]="email.valid">
             <label for="exampleInputEmail1">Email</label>
             <input type="email" class="form-control" id="exampleInputEmail1" placeholder="julianaOliveira@gmail.com" name="email" [(ngModel)]="usuarios.email" required email #email="ngModel">
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" *ngIf="email.invalid"></span>
+            <span id="inputError2Status" class="sr-only">(error)</span>
+            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" *ngIf="email.valid"></span>
+            <span id="inputSuccess2Status" class="sr-only">(success)</span>
         </div>
 
-        <div class="form-group cpf  has-success  has-feedback" [ngClass]=" aplicarCssError(cpf)">
+        <div class="form-group cpf  has-success  has-feedback" [class.has-error]="cpf.invalid && cpf.touched" [class.has-success]="cpf.valid">
             <label for="exampleInputEmail1 ">CPF</label>
             <input class="form-control" id="exampleInputEmail1" placeholder="13882646727" name="cpf" maxlength="11" [(ngModel)]="usuarios.cpf" required #cpf="ngModel" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})">
-
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" *ngIf="cpf.invalid"></span>
+            <span id="inputError2Status" class="sr-only">(error)</span>
+            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" *ngIf="cpf.valid"></span>
+            <span id="inputSuccess2Status" class="sr-only">(success)</span>
         </div>
 
-        <div class="form-group data has-success   has-feedback" [ngClass]=" aplicarCssError(data)">
+        <div class="form-group data has-success   has-feedback" [class.has-error]="data.invalid && data.touched" [class.has-success]="data.valid">
             <label for="exampleInputEmail1">Data da Consulta</label>
             <input type="date" class="form-control" id="" placeholder="" name="data" [(ngModel)]="usuarios.dataConsulta" required #data="ngModel">
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" *ngIf="data.invalid"></span>
+            <span id="inputError2Status" class="sr-only">(error)</span>
+            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" *ngIf="data.valid"></span>
+            <span id="inputSuccess2Status" class="sr-only">(success)</span>
         </div>
 
 
@@ -49,7 +63,7 @@
 
 
 
-        <div class="form-group desc has-success" [ngClass]=" aplicarCssError(desc)">
+        <div class="form-group desc has-success" [class.has-error]="desc.invalid && desc.touched">
             <label for="exampleInputEmail1">Descrição do paciente</label>
             <textarea class="form-control" name="desc" id="" cols="30" rows="10" [(ngModel)]="usuarios.DescricaoPaciente" required #desc="ngModel"></textarea>
         </div>
